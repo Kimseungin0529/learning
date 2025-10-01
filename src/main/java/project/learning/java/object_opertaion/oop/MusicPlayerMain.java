@@ -1,4 +1,4 @@
-package project.learning.java.object_opertaion;
+package project.learning.java.object_opertaion.oop;
 
 public class MusicPlayerMain {
     /**
