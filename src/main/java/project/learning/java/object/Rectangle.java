@@ -1,4 +1,4 @@
-package project.learning.java.opject;
+package project.learning.java.object;
 
 public class Rectangle {
     private int width;
