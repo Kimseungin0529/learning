@@ -1,4 +1,4 @@
-package project.learning.java.nested_class.정적중첩and내부.before;
+package project.learning.java.nested_class.정적중첩클래스.before;
 
 /**
  * 현재 NetworkMessage 클래스는 Network 클래스에서만 사용된다. 다만 패키지를 보면 NetworkMessage, Network 가 분리되어 있기에 또다른 클래스와 상호

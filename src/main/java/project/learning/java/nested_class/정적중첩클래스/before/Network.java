@@ -1,4 +1,4 @@
-package project.learning.java.nested_class.정적중첩and내부.before;
+package project.learning.java.nested_class.정적중첩클래스.before;
 
 public class Network {
 

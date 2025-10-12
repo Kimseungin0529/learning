@@ -1,4 +1,4 @@
-package project.learning.java.nested_class.정적중첩and내부.after;
+package project.learning.java.nested_class.정적중첩클래스.after;
 
 public class NetworkMessage {
     private String message;
