@@ -1,4 +1,4 @@
-package project.learning.java.generic.ex1;
+package project.learning.java.datastructure.generic.ex1;
 
 public class BoxMain {
 

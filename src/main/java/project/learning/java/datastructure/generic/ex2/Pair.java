@@ -1,4 +1,4 @@
-package project.learning.java.generic.ex2;
+package project.learning.java.datastructure.generic.ex2;
 
 public class Pair<T, S> {
     private T first;
