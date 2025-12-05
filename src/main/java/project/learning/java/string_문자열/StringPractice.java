@@ -1,5 +1,8 @@
 package project.learning.java.string_문자열;
 
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class StringPractice {
 
     public static void main(String[] args) {
@@ -31,6 +34,36 @@ public class StringPractice {
         int findIndex = str2.indexOf(ext);
         String result = str2.substring(0, findIndex);
         System.out.println("result = " + result);
+
+        HashMap<String, Nodes> map = new HashMap<>();
+        List<Nodes> collect = map.values().stream().sorted()
+                .collect(Collectors.toList());
+
+
+
+    }
+
+    static class Nodes{
+        int total = 0;
+        List<Node> list = new ArrayList<>();
+
+        void add(Node node){
+            list.add(node);
+            total += node.count;
+        }
+
+        void sort(){
+            list.sort((o1, o2) -> -o1.index + o2.index);
+        }
+    }
+
+    static class Node{
+        int index;
+        int count;
+        Node(int count, int index){
+            this.count = count;
+            this.index = index;
+        }
     }
 
 }
