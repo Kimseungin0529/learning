@@ -2,6 +2,7 @@ package project.learning.java.멀티스레드_동시성.경쟁상태.syncronized
 
 import project.learning.java.멀티스레드_동시성.경쟁상태.WithdrawTask;
 import project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.lock.BankAccountV3;
+import project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.lock.BankAccountV4;
 
 import static project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.BankMain.MyLogger.log;
 
@@ -9,7 +10,8 @@ import static project.learning.java.멀티스레드_동시성.경쟁상태.syncr
 public class BankMain {
     public static void main(String[] args) throws InterruptedException {
         //BankAccount account = new BankAccountV(1000);
-        BankAccount account = new BankAccountV3(1000);
+        //BankAccount account = new BankAccountV3(1000);
+        BankAccount account = new BankAccountV4(1000);
 
         Thread t1 = new Thread(new WithdrawTask(account, 800), "t1");
         Thread t2 = new Thread(new WithdrawTask(account, 800), "t2");
