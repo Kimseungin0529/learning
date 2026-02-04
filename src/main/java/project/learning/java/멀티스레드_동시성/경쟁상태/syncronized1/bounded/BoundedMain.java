@@ -15,7 +15,9 @@ public class BoundedMain {
     public static void main(String[] args) {
         //BoundedQueue queue = new BoundedQueueV1(2);
         //BoundedQueue queue = new BoundedQueueV2(2);
-        BoundedQueue queue = new BoundedQueueV3(2);
+        //BoundedQueue queue = new BoundedQueueV3(2);
+        BoundedQueue queue = new BoundedQueueV4(2);
+        //BoundedQueue queue = new BoundedQueueV5(2);
 
         /**
          * 생산자 먼저 실행 또는 소비자 먼저 실행 하나만 실행해야 한다.
