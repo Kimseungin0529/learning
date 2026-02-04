@@ -13,13 +13,14 @@ import static project.learning.java.멀티스레드_동시성.경쟁상태.syncr
  */
 public class BoundedMain {
     public static void main(String[] args) {
-        BoundedQueue queue = new BoundedQueueV1(2);
+        //BoundedQueue queue = new BoundedQueueV1(2);
+        BoundedQueue queue = new BoundedQueueV2(2);
 
         /**
          * 생산자 먼저 실행 또는 소비자 먼저 실행 하나만 실행해야 한다.
          */
-        //producerFirst(queue);
-        consumerFirst(queue);
+        producerFirst(queue);
+        //consumerFirst(queue);
 
     }
 
