@@ -1,8 +1,8 @@
-package project.learning.java.멀티스레드_동시성.경쟁상태;
+package project.learning.java.멀티스레드_동시성.가시성_동시성_실습;
 
-public class Visibility {
+public class VisibilityVolatile {
 
-    static boolean running = true;
+    static volatile boolean running = true;
 
     public static void main(String[] args) throws InterruptedException {
         Thread worker = new Thread(() -> {
