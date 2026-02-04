@@ -22,6 +22,9 @@ public class BankAccountV3 implements BankAccount {
      * 특히나 비즈니스 로직(출금 처리)에서 예외가 발생하더라도 해당 임계 영역에서 사용되는 공유 자원의 락을
      * 해제해야 하는 것은 필수다. 따라서 finally 블록에서 lock.unlock() 을 필수적으로 호출해야 한다.
      *
+     * 참고로 ReentrantLock 는 공정성 옵션을 제공한다. 생성자에 true 값을 전달하면 공정한 락이 된다.
+     * 공정성을 가지면 내부 대기큐에 저장된 순서대로 락 소유권을 가진다. 또한 lock() 이외 lockInterruptibly()[인터럽트에 반응 가능], tryLock()[즉시 확인 및, 시간 지정 가능]
+     * 메서드를 제공하여 유연한 처리가 가능하다. 다음 스텝에서 확인해보자.
      */
 
     /**
@@ -31,7 +34,7 @@ public class BankAccountV3 implements BankAccount {
      * [ main ] t1 state: TIMED_WAITING
      * [ main ] t2 state: WAITING
      * 가 나오는데 현재 실제 잔액 계산 과정을 생각하여 sleep(1000) 으로 1초 지연을 주었기 때문이다. t1 스레드는 계산 과정(sleep)에서 TIMED_WAITING 상태가 되고,
-     * t2 스레드는 t1 스레드가 락을 해제할 때까지 대기해야 하기에 WAITING 상태가 된다.(lock,lock()은 waiting 상태로 만든다. synchronized 와 동일)
+     * t2 스레드는 t1 스레드가 락을 해제할 때까지 대기해야 하기에 WAITING 상태가 된다.(lock,lock()은 waiting 상태로 만든다. synchronized 와 유사)
      *
      */
 
