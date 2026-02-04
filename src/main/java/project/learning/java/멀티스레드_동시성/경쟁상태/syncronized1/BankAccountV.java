@@ -1,6 +1,7 @@
 package project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1;
 
-import project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.BankMain.MyLogger;
+
+import static project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.common.MyLogger.log;
 
 public class BankAccountV implements BankAccount {
     private int balance;
@@ -22,21 +23,21 @@ public class BankAccountV implements BankAccount {
      */
     @Override
     public boolean withdraw(int amount) throws InterruptedException {
-        MyLogger.log("거래 시작: " + getClass().getSimpleName());
+        log("거래 시작: " + getClass().getSimpleName());
         // == 임계 영역 시작 ==
         synchronized (this) {
-            MyLogger.log("[검증 시작] 출금액: " + amount + ", 잔액: " + balance);
+            log("[검증 시작] 출금액: " + amount + ", 잔액: " + balance);
             if (balance < amount) {
-                MyLogger.log("[검증 실패] 출금액: " + amount + ", 잔액: " + balance);
+                log("[검증 실패] 출금액: " + amount + ", 잔액: " + balance);
                 return false;
             }
-            MyLogger.log("[검증 완료] 출금액: " + amount + ", 잔액: " + balance);
+            log("[검증 완료] 출금액: " + amount + ", 잔액: " + balance);
             Thread.sleep(1000);
             balance = balance - amount;
-            MyLogger.log("[출금 완료] 출금액: " + amount + ", 변경 잔액: " + balance);
+            log("[출금 완료] 출금액: " + amount + ", 변경 잔액: " + balance);
         }
         // == 임계 영역 종료 ==
-        MyLogger.log("거래 종료");
+        log("거래 종료");
 
         return true;
     }
