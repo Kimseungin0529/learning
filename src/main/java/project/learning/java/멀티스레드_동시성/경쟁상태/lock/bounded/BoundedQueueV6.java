@@ -1,9 +1,7 @@
-package project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.bounded;
+package project.learning.java.멀티스레드_동시성.경쟁상태.lock.bounded;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
-
-import static project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.common.MyLogger.log;
 
 public class BoundedQueueV6 implements BoundedQueue {
 

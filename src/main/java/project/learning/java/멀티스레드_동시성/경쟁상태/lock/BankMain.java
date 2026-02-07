@@ -1,11 +1,9 @@
-package project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1;
+package project.learning.java.멀티스레드_동시성.경쟁상태.lock;
 
 import project.learning.java.멀티스레드_동시성.경쟁상태.WithdrawTask;
-import project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.lock.BankAccountV3;
-import project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.lock.BankAccountV4;
-import project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.lock.BankAccountV5;
+import project.learning.java.멀티스레드_동시성.경쟁상태.lock.lock.BankAccountV5;
 
-import static project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.common.MyLogger.log;
+import static project.learning.java.멀티스레드_동시성.경쟁상태.lock.common.MyLogger.log;
 
 
 public class BankMain {

@@ -1,4 +1,4 @@
-package project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.bounded;
+package project.learning.java.멀티스레드_동시성.경쟁상태.lock.bounded;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -6,7 +6,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.common.MyLogger.log;
+import static project.learning.java.멀티스레드_동시성.경쟁상태.lock.common.MyLogger.log;
 
 public class BoundedQueueV4 implements BoundedQueue {
     private Lock lock = new ReentrantLock();

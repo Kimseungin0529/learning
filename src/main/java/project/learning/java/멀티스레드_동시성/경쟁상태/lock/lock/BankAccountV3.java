@@ -1,12 +1,12 @@
-package project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.lock;
+package project.learning.java.멀티스레드_동시성.경쟁상태.lock.lock;
 
-import project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.BankAccount;
+import project.learning.java.멀티스레드_동시성.경쟁상태.lock.BankAccount;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.common.MyLogger.log;
-import static project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.common.MySleep.sleep;
+import static project.learning.java.멀티스레드_동시성.경쟁상태.lock.common.MyLogger.log;
+import static project.learning.java.멀티스레드_동시성.경쟁상태.lock.common.MySleep.sleep;
 
 public class BankAccountV3 implements BankAccount {
     private int balance;

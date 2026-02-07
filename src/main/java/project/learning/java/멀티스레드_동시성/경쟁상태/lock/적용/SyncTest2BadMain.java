@@ -1,6 +1,6 @@
-package project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.적용;
+package project.learning.java.멀티스레드_동시성.경쟁상태.lock.적용;
 
-import static project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.적용.SyncTest2BadMain.MyCounter.MyLogger.log;
+import static project.learning.java.멀티스레드_동시성.경쟁상태.lock.적용.SyncTest2BadMain.MyCounter.MyLogger.log;
 
 public class SyncTest2BadMain {
 

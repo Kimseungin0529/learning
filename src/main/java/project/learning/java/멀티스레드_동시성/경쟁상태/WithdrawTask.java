@@ -1,6 +1,6 @@
 package project.learning.java.멀티스레드_동시성.경쟁상태;
 
-import project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.BankAccount;
+import project.learning.java.멀티스레드_동시성.경쟁상태.lock.BankAccount;
 
 public class WithdrawTask implements Runnable {
     private BankAccount account;

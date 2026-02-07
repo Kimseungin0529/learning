@@ -1,18 +1,19 @@
-package project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.lock;
+package project.learning.java.멀티스레드_동시성.경쟁상태.lock.lock;
 
-import project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.BankAccount;
+import project.learning.java.멀티스레드_동시성.경쟁상태.lock.BankAccount;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.common.MyLogger.log;
-import static project.learning.java.멀티스레드_동시성.경쟁상태.syncronized1.common.MySleep.sleep;
+import static project.learning.java.멀티스레드_동시성.경쟁상태.lock.common.MyLogger.log;
+import static project.learning.java.멀티스레드_동시성.경쟁상태.lock.common.MySleep.sleep;
 
-public class BankAccountV4 implements BankAccount {
+public class BankAccountV5 implements BankAccount {
     private int balance;
     private final Lock lock = new ReentrantLock();
 
-    public BankAccountV4(int balance) {
+    public BankAccountV5(int balance) {
         this.balance = balance;
     }
 
@@ -23,16 +24,19 @@ public class BankAccountV4 implements BankAccount {
      * 다만 tryLock() 은 대기하지 않고 즉시 반환되기에 락을 획득하지 못한 스레드는 임계 영역에 진입하지 못한다.
      * 만약 대기해서 재시도 처리를 하려면 따로 구현해야 한다. BankMain 클래스에서 해당 방식을 사용하면
      * t1, t2 스레드가 동시에 출금 요청을 하더라도 락을 획득한 스레드만 출금 처리를 진행하고, 락을 획득하지 못한 스레드는 출금에 실패하는 것을 확인할 수 있다.
-     * [ main ] t1 state: TIMED_WAITING
-     * [ main ] t2 state: TERMINATED
+     * [ main ] t1 state: TIMED_WAITING ( sleep(1000) 대기 ) [먼저 실행했다고 가정, 환경에 따라 t1, t2 순서는 바뀔 수 있음]
+     * [ main ] t2 state: TERMINATED ( treyLock(500ms) 대기  )
      * 와 같이 실패한 스레드는 대기해서 진행되지 않기에 종료(TERMINATED) 상태가 된다.
+     *
+     * ReentrantLock lock(), lockInterruptibly(), tryLock() 메서드를 통해 다양한 락 획득 방식을 확인할 수 있었다. 공정성 옵션도 제공하며 LockSupport 를 활용하여
+     * 구현체에서 처리했기에 다양한 조건에 대해 유연하게 동시성 처리를 간편하게 사용할 수 있다.
      */
 
     @Override
-    public boolean withdraw(int amount) {
+    public boolean withdraw(int amount) throws InterruptedException {
         log("거래 시작: " + getClass().getSimpleName());
 
-        if (!lock.tryLock()) {
+        if (!lock.tryLock(500, TimeUnit.MILLISECONDS)) {
             log("[진입 실패] 이미 처리 중인 작업이 있습니다.");
             return false;
         }
