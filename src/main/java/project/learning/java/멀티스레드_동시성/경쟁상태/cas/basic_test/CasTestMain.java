@@ -1,4 +1,4 @@
-package project.learning.java.멀티스레드_동시성.경쟁상태.cas;
+package project.learning.java.멀티스레드_동시성.경쟁상태.cas.basic_test;
 
 import java.util.ArrayList;
 import java.util.List;

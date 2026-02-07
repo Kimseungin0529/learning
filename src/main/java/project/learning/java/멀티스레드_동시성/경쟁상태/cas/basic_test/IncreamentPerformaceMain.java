@@ -1,4 +1,4 @@
-package project.learning.java.멀티스레드_동시성.경쟁상태.cas;
+package project.learning.java.멀티스레드_동시성.경쟁상태.cas.basic_test;
 
 public class IncreamentPerformaceMain {
     private static final int COUNT = 100_000_000;
