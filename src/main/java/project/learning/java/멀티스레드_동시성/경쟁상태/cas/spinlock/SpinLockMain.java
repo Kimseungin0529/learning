@@ -106,7 +106,7 @@ public class SpinLockMain {
      *
      *         return getValue + 1;
      *     }
- *     위 메서드를 보면
+     *     위 메서드를 보면
      *     do 구문 안에 읽기값과 쓰기 값에 비교를 통해 원자성이 일어난다. 하지만
      *     getValue = atomicInteger.get();
      *     result = atomicInteger.compareAndSet(getValue, getValue + 1);
