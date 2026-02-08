@@ -2,8 +2,7 @@ package project.learning.java.멀티스레드_동시성.경쟁상태.cas.spinloc
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static project.learning.java.멀티스레드_동시성.경쟁상태.lock.common.MyLogger.log;
-import static project.learning.java.멀티스레드_동시성.경쟁상태.lock.common.MySleep.sleep;
+import static project.learning.java.멀티스레드_동시성.경쟁상태.common.MyLogger.log;
 
 public class SpinLock {
 

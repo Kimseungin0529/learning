@@ -1,4 +1,4 @@
-package project.learning.java.멀티스레드_동시성.경쟁상태.lock.common;
+package project.learning.java.멀티스레드_동시성.경쟁상태.common;
 
 public class MySleep {
     public static void sleep(int millis) {

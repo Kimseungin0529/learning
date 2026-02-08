@@ -3,8 +3,8 @@ package project.learning.java.멀티스레드_동시성.경쟁상태.lock.bounde
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-import static project.learning.java.멀티스레드_동시성.경쟁상태.lock.common.MyLogger.log;
-import static project.learning.java.멀티스레드_동시성.경쟁상태.lock.common.MySleep.sleep;
+import static project.learning.java.멀티스레드_동시성.경쟁상태.common.MyLogger.log;
+import static project.learning.java.멀티스레드_동시성.경쟁상태.common.MySleep.sleep;
 
 public class BoundedQueueV2 implements BoundedQueue {
     private Deque<String> queue = new ArrayDeque<>();

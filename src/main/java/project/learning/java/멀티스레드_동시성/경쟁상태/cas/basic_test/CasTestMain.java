@@ -3,7 +3,7 @@ package project.learning.java.멀티스레드_동시성.경쟁상태.cas.basic_t
 import java.util.ArrayList;
 import java.util.List;
 
-import static project.learning.java.멀티스레드_동시성.경쟁상태.lock.common.MySleep.sleep;
+import static project.learning.java.멀티스레드_동시성.경쟁상태.common.MySleep.sleep;
 
 public class CasTestMain {
 

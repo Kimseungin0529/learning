@@ -2,7 +2,7 @@ package project.learning.java.멀티스레드_동시성.경쟁상태.cas.collcti
 
 import java.util.Arrays;
 
-import static project.learning.java.멀티스레드_동시성.경쟁상태.lock.common.MySleep.sleep;
+import static project.learning.java.멀티스레드_동시성.경쟁상태.common.MySleep.sleep;
 
 /**\
  * 일반적인 컬렉션을 구현한 것이다. 단일 스레드 환경에서는 당연히 의도대로 동작할 것이다. 멀티스레드면 어떻게 될까?
