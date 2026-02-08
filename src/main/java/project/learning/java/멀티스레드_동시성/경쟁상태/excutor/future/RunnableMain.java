@@ -1,4 +1,4 @@
-package project.learning.java.멀티스레드_동시성.경쟁상태.excutor;
+package project.learning.java.멀티스레드_동시성.경쟁상태.excutor.future;
 
 import java.util.Random;
 
