@@ -24,7 +24,6 @@ public class OldOrderService {
         Future<Boolean> FutureShippingResult = executor.submit(shippingWork);
         Future<Boolean> FutureAccountingResult = executor.submit(accountingWork);
 
-
         try {
             Boolean inventoryResult = FutureInventoryResult.get();
             Boolean shippingResult = FutureShippingResult.get();
