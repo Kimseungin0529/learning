@@ -50,6 +50,11 @@ public class PoolSizeMain3 {
                 log(taskName + " -> " + e);
             }
         }
+        /**
+         * 스레드 풀도 결국 요청을 수행하는 데 한계가 있다. 서버 자원은 한정적이기에 일정 수준에서는 요청을 대기시키거나 거절해야 한다. 스레드 풀은 이를 위해
+         * 각각에 대한 예외 정책이 있다. 기본으로 RejectedExecutionException 를 발생(AbortPolicy)시키지만 사용자 정의 혹은 초과 요청 무시(DiscardPolicy),
+         * 호출한 스레드가 직접 처리하기(CallerRunsPolicy)와 같은 방법이 있다. 상황에 맞게 사용하면 된다.
+         */
         es.shutdown();
         long endMs = System.currentTimeMillis();
         log("time: " + (endMs - startMs));
